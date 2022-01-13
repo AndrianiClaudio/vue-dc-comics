@@ -1,16 +1,16 @@
 <template>
     <header>
         <div id="container">
-            <img src='../assets/dc-logo.png' :alt='logo.alt' class="logo">
+            <img src='../assets/img/dc-logo.png' :alt='logo.alt' class="logo">
             <nav>
                 <ul>
-                    <li class="active">
+                    <li>
                         <a href="#">
                             characters
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="active">
                             comics
                         </a>
                     </li>
@@ -66,7 +66,7 @@ export default {
     data() {
         return {
             logo: {
-                // src: '../assets/dc-logo.png',
+                // src: '../assets/img/dc-logo.png',
                 alt: 'logo DC'
             }
         }
@@ -74,6 +74,7 @@ export default {
 }
 </script>
 <style scoped lang = 'scss'>
+@import "../assets/scss/partials/_variables.scss";
 header {
     display: flex;
     align-items: center;
@@ -93,15 +94,16 @@ header {
                 height: 100px;
                 align-items: center;
                 padding: 0.5rem;
-                border-bottom: 5px solid white;
-                &.active {
-                    border-bottom: 5px solid aqua;
-                }
                 a {
                     display: flex;
                     align-items: center;
                     height: 100px;
                     color: black;
+                    border-bottom: 5px solid white;
+                    &.active {
+                        border-bottom: 5px solid $headerActiveLinkColor;
+                        /* border-bottom: 5px solid aqua; */
+                    }
                 }
             }
         }

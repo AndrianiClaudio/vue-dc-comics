@@ -104,19 +104,19 @@
                             <a href="#">FOLLOW US</a>
                         </li>
                         <li>
-                            <a href="#"><img src="../assets/footer-facebook.png" alt=""></a>
+                            <a href="#"><img src="../assets/img/footer-facebook.png" alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="../assets/footer-twitter.png" alt=""></a>
+                            <a href="#"><img src="../assets/img/footer-twitter.png" alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="../assets/footer-youtube.png" alt=""></a>
+                            <a href="#"><img src="../assets/img/footer-youtube.png" alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="../assets/footer-pinterest.png" alt=""></a>
+                            <a href="#"><img src="../assets/img/footer-pinterest.png" alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="../assets/footer-periscope.png" alt=""></a>
+                            <a href="#"><img src="../assets/img/footer-periscope.png" alt=""></a>
                         </li>
                     </ul>
                 </nav>
@@ -135,10 +135,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../assets/scss/partials/_variables.scss";
+    
 #footer-main {
-    background-image: url('../assets/footer-bg.jpg');
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-image: url('../assets/img/footer-bg.jpg');
     #container {
-        background-image: url('../assets/dc-logo-bg.png');
+        background-image: url('../assets/img/dc-logo-bg.png');
         background-position: right;
         background-repeat: no-repeat;
         display: flex;
@@ -157,7 +161,7 @@ export default {
     }
 }
 #footer-bar {
-    background-color: black;
+    background-color: $footerBarBgColor;
     height: 100px;
     display: flex;
 
@@ -166,9 +170,10 @@ export default {
         justify-content: space-between;
         align-items: center;
         button {
-            padding: 1rem;
+            font-size: 1rem;
+            padding: 0.5rem 1.2rem;
             border: 2px solid blue;
-            background-color: black;
+            background-color: $footerBarBgColor;
             color: white;
             &:hover {
                 cursor: pointer;

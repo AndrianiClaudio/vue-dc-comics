@@ -9,23 +9,23 @@
             <div id="container">
                 <ul>
                     <li>
-                        <a href="#"><img src="../assets/buy-comics-digital-comics.png" alt="#"></a>
+                        <a href="#"><img src="../assets/img/buy-comics-digital-comics.png" alt="#"></a>
                         <span>Digital comics</span>
                     </li>
                     <li>
-                        <a href="#"><img src="../assets/buy-comics-merchandise.png" alt="#"></a>
+                        <a href="#"><img src="../assets/img/buy-comics-merchandise.png" alt="#"></a>
                         <span>DC merchandise</span>
                     </li>
                     <li>
-                        <a href="#"><img src="../assets/buy-comics-subscriptions.png" alt="#"></a>
+                        <a href="#"><img src="../assets/img/buy-comics-subscriptions.png" alt="#"></a>
                         <span>subscription</span>
                     </li>
                     <li>
-                        <a href="#"><img src="../assets/buy-comics-shop-locator.png" alt="#"></a>
+                        <a href="#"><img src="../assets/img/buy-comics-shop-locator.png" alt="#"></a>
                         <span>comic shop locator</span>
                     </li>
                     <li>
-                        <a href="#"><img src="../assets/buy-dc-power-visa.svg" alt="#"></a>
+                        <a href="#"><img src="../assets/img/buy-dc-power-visa.svg" alt="#"></a>
                         <span>dc power visa</span>
                     </li>
                 </ul>
@@ -44,11 +44,12 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@import "../assets/scss/partials/_variables.scss";
 #jumbo {
-    background-color: black;
+    background-color: $jumboBgColor;
     display: flex;
     align-items: center;
-    height: 130px;
+    height: 110px;
     #container {
         color: white;
     }
