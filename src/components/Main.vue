@@ -46,6 +46,9 @@ export default {
 <style scoped lang='scss'>
 #jumbo {
     background-color: black;
+    display: flex;
+    align-items: center;
+    height: 130px;
     #container {
         color: white;
     }
@@ -62,11 +65,12 @@ export default {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.85rem;
             color: white;
             text-transform: uppercase;
             img {
-                height: 60px;
-                width: 60px;    
+                // height: 50px;
+                width: 50px;    
             }
         }
     }

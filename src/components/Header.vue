@@ -85,17 +85,26 @@ header {
         img.logo {
             height: 70px;
         }
-        li {
-            display: inline;
-            text-transform: uppercase;
-            padding: 0.5rem;
-            a {
-                color: black;
+        ul {
+            display: flex;
+            li {
+                display: flex;
+                text-transform: uppercase;
+                height: 100px;
+                align-items: center;
+                padding: 0.5rem;
+                border-bottom: 5px solid white;
+                &.active {
+                    border-bottom: 5px solid aqua;
+                }
+                a {
+                    display: flex;
+                    align-items: center;
+                    height: 100px;
+                    color: black;
+                }
             }
         }
-    & .active {
-        border-bottom: 5px solid aqua;
-    }
     }
 }
 

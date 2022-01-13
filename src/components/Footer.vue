@@ -104,19 +104,19 @@
                             <a href="#">FOLLOW US</a>
                         </li>
                         <li>
-                            <!-- <a href="#"><img src="../assets/footer-facebook.png" alt=""></a> -->
+                            <a href="#"><img src="../assets/footer-facebook.png" alt=""></a>
                         </li>
                         <li>
-                            <!-- <a href="#"><img src="../assets/footer-periscope.png" alt=""></a> -->
+                            <a href="#"><img src="../assets/footer-twitter.png" alt=""></a>
                         </li>
                         <li>
-                            <!-- <a href="#"><img src="../assets/footer-pinterest.png" alt=""></a> -->
+                            <a href="#"><img src="../assets/footer-youtube.png" alt=""></a>
                         </li>
                         <li>
-                            <!-- <a href="#"><img src="../assets/footer-pinterest.png" alt=""></a> -->
+                            <a href="#"><img src="../assets/footer-pinterest.png" alt=""></a>
                         </li>
                         <li>
-                            <!-- <a href="#"><img src="../assets/footer-footer-youtube.png" alt=""></a> -->
+                            <a href="#"><img src="../assets/footer-periscope.png" alt=""></a>
                         </li>
                     </ul>
                 </nav>
@@ -160,7 +160,7 @@ export default {
     background-color: black;
     height: 100px;
     display: flex;
-    align-items: center;
+
     #container {
         display: flex;
         justify-content: space-between;
@@ -176,6 +176,7 @@ export default {
         }
         ul {
             display: flex;
+            align-items: center;
             gap: 1.5rem;
         }
     }
