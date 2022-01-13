@@ -23,13 +23,5 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-#container {
-  width: 80%;
-  margin: 0 auto;
-}
+@import 'assets/scss/style.css';
 </style>
