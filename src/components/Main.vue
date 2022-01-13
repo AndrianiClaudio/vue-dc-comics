@@ -1,5 +1,8 @@
 <template>
     <main>
+        <div id="jumbo">
+
+        </div>
         <div id="container">
 
         </div>
@@ -7,10 +10,10 @@
 </template>
 
 <script>
-export default ({
+export default {
     name: 'Footer',
     // data() {
     // }
-})
+}
     
 </script>

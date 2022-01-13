@@ -1,11 +1,10 @@
 <template>
     <header>
-        <div id="cotainer">
-
-            <img src='../assets/dc-logo.png' alt='Logo DC' class="logo">
+        <div id="container">
+            <img src='../assets/dc-logo.png' :alt='logo.alt' class="logo">
             <nav>
                 <ul>
-                    <li>
+                    <li class="active">
                         <a href="#">
                             characters
                         </a>
@@ -62,30 +61,43 @@
 </template>
 
 <script>
-export default ({
+export default {
     name: 'Header',
     data() {
         return {
+            logo: {
+                // src: '../assets/dc-logo.png',
+                alt: 'logo DC'
+            }
         }
     }
-})
+}
 </script>
-
 <style scoped lang = 'scss'>
-#container {
+header {
     display: flex;
     align-items: center;
-    img.logo {
-        height: 60px;
-    }
-    li {
-        display: inline;
-        list-style: none;
-        text-transform: uppercase;
-        a {
-            text-decoration: none;
-            color: black;
+    height: 100px;
+    #container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img.logo {
+            height: 70px;
         }
+        li {
+            display: inline;
+            list-style: none;
+            text-transform: uppercase;
+            padding: 0.5rem;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    & .active {
+        border-bottom: 5px solid aqua;
+    }
     }
 }
 

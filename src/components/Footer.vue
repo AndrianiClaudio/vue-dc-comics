@@ -7,10 +7,10 @@
 </template>
 
 <script>
-export default ({
+export default {
     name: 'Main',
     // data() {
     // }
-})
+}
     
 </script>
