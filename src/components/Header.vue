@@ -90,7 +90,6 @@ header {
             text-transform: uppercase;
             padding: 0.5rem;
             a {
-                text-decoration: none;
                 color: black;
             }
         }

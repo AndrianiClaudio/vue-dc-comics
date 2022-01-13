@@ -17,11 +17,11 @@
                         <span>DC merchandise</span>
                     </li>
                     <li>
-                        <a href="#"><img src="../assets/buy-comics-shop-locator.png" alt="#"></a>
+                        <a href="#"><img src="../assets/buy-comics-subscriptions.png" alt="#"></a>
                         <span>subscription</span>
                     </li>
                     <li>
-                        <a href="#"><img src="../assets/buy-comics-subscriptions.png" alt="#"></a>
+                        <a href="#"><img src="../assets/buy-comics-shop-locator.png" alt="#"></a>
                         <span>comic shop locator</span>
                     </li>
                     <li>
@@ -65,8 +65,8 @@ export default {
             color: white;
             text-transform: uppercase;
             img {
-                height: 40px;
-                width: 40px;    
+                height: 60px;
+                width: 60px;    
             }
         }
     }
