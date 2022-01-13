@@ -87,7 +87,6 @@ header {
         }
         li {
             display: inline;
-            list-style: none;
             text-transform: uppercase;
             padding: 0.5rem;
             a {
