@@ -96,7 +96,31 @@
             </div>
         </div>
         <div id='footer-bar'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat omnis fugiat nihil, ullam iure vel accusantium, voluptatibus aliquam mollitia animi, harum facere! Magni hic veritatis porro ad numquam dolorum nam.
+            <div id="container">
+                <button>SIGN-UP NOW</button>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">FOLLOW US</a>
+                        </li>
+                        <li>
+                            <!-- <a href="#"><img src="../assets/footer-facebook.png" alt=""></a> -->
+                        </li>
+                        <li>
+                            <!-- <a href="#"><img src="../assets/footer-periscope.png" alt=""></a> -->
+                        </li>
+                        <li>
+                            <!-- <a href="#"><img src="../assets/footer-pinterest.png" alt=""></a> -->
+                        </li>
+                        <li>
+                            <!-- <a href="#"><img src="../assets/footer-pinterest.png" alt=""></a> -->
+                        </li>
+                        <li>
+                            <!-- <a href="#"><img src="../assets/footer-footer-youtube.png" alt=""></a> -->
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </footer>
 </template>
@@ -123,13 +147,37 @@ export default {
             text-transform: uppercase;
             margin: 1rem 0;
         }
-        a {
-            text-transform: capitalize;
-            color: grey;
+        li {
+            padding-bottom: 0.5rem;
+            a {
+                text-transform: capitalize;
+                color: grey;
+            }
         }
     }
 }
 #footer-bar {
-    background-color: grey;
+    background-color: black;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    #container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            padding: 1rem;
+            border: 2px solid blue;
+            background-color: black;
+            color: white;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+    }
 }
 </style>
