@@ -1,7 +1,10 @@
 <template>
-<div class="cards">
-    <div class="card" v-for="(card,index) in cards" v-bind:key="index">
-        {{card.thumb}}
+<div id="container">
+    <div class="cards">
+        <div class="card" v-for="(card,index) in cards" v-bind:key="index">
+            <img :src="card.thumb" alt="Errore nel caricamento della foto">
+            <strong class="series">{{card.series}}</strong>
+        </div>
     </div>
 </div>
 </template>
@@ -94,4 +97,32 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+// @import "../assets/scss/partials/_variables.scss";
+@import "../../assets/scss/partials/_mixins.scss";
+#container {
+    min-width: 980px;
+    width: 100%;
+    background-color: black;
+    .cards {
+        @include flex();
+        margin: 0 auto;
+        width: 60%;
+        flex-wrap: wrap;
+        padding: 2rem;
+        .card {
+            @include flex();
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            flex-basis: calc(100% / 6);
+            img {
+                height: 150px;
+                width: 150px;
+            }
+            .series {
+                color: white;
+            }
+        }
+    }
+}
 </style>
