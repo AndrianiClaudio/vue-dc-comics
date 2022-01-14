@@ -138,7 +138,7 @@ export default {
 @import "../assets/scss/partials/_variables.scss";
 @import "../assets/scss/partials/_mixins.scss";
 footer {
-    min-width: 950px;
+    min-width: 980px;
 }
 #footer-main {
     background-image: url('../assets/img/footer-bg.jpg');
@@ -148,7 +148,6 @@ footer {
         background-image: url('../assets/img/dc-logo-bg.png');
         background-position: right;
         background-repeat: no-repeat;
-        // display: flex;
         @include flex();
         gap: 3.5rem;
         h2 {
@@ -169,7 +168,6 @@ footer {
 #footer-bar {
     background-color: $footerBarBgColor;
     height: 100px;
-    // display: flex;
     @include flex();
     #container {
         @include flex(space-between,center);
@@ -184,9 +182,7 @@ footer {
             }
         }
         ul {
-            @include flex('',center);
-            // display: flex;
-            // align-items: center;
+            @include flex($align:center);
             gap: 1.5rem;
             a {
                 font-size: 1.25rem;

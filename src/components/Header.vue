@@ -66,7 +66,6 @@ export default {
     data() {
         return {
             logo: {
-                // src: '../assets/img/dc-logo.png',
                 alt: 'logo DC'
             }
         }
@@ -82,26 +81,18 @@ header {
     min-width: 850px;
     #container {
         @include flex(space-between,center);
-        /* display: flex;
-        align-items: center;
-        justify-content: space-between; */
         img.logo {
             height: 70px;
         }
         ul {
-            /* display: flex; */
             @include flex();
             li {
                 @include flex($align:center);
-                /* display: flex;
-                align-items: center; */
                 text-transform: uppercase;
                 height: 100px;
                 padding: 0.5rem;
                 a {
                     @include flex($align:center);
-                    /* display: flex;
-                    align-items: center; */
                     height: 100px;
                     color: black;
                     border-bottom: 5px solid white;
@@ -109,7 +100,6 @@ header {
                     &.active {
                         color: $headerActiveLinkColor;
                         border-bottom: 5px solid $headerActiveLinkColor;
-                        /* border-bottom: 5px solid aqua; */
                     }
                 }
             }
