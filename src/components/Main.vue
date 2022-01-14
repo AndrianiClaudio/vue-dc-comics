@@ -5,10 +5,7 @@
                 <!-- <h1> Content goes here </h1> -->
             </div>
         </div>
-        <div class="cards">
-            <Card 
-                txt="test"/>
-        </div>
+        <Card />
         <div id="menu">
             <div id="container">
                 <ul>
