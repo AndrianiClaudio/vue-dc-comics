@@ -5,12 +5,14 @@
                 <!-- <h1> Content goes here </h1> -->
             </div>
         </div>
-        <div class="cards">
-            <Card class="card"
-                v-for="(card,index) in cards" v-bind:key="index"
-                :thumb='card.thumb'
-                :series='card.series'
-            />
+        <div class="container">
+            <div class="cards">
+                <Card
+                    v-for="(card,index) in cards" v-bind:key="index"
+                    :thumb='card.thumb'
+                    :series='card.series'
+                />
+            </div>
         </div>
         <div id="menu">
             <div id="container">
@@ -140,11 +142,26 @@ main {
     height:250px;
     background-image: url('../assets/img/jumbotron.jpg');
     background-size: cover;
+    background-position: top;
     @include flex($align:center);
     #container {
         color: white;
     }
 }
+
+.container {
+    min-width: 980px;
+    width: 100%;
+    background-color: black;
+    .cards {
+        @include flex();
+        margin: 0 auto;
+        width: 60%;
+        flex-wrap: wrap;
+        padding: 2rem;
+    }
+}
+
 #menu {
     background-color: $headerActiveLinkColor;
     @include flex($align:center);

@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div id="footer-main">
-            <div id="container">
+            <div class="container">
                 <div class="col">
                     <h2>dc comics</h2>
                     <ul>
@@ -96,7 +96,7 @@
             </div>
         </div>
         <div id='footer-bar'>
-            <div id="container">
+            <div class="container">
                 <button>SIGN-UP NOW</button>
                 <nav>
                     <ul>
@@ -169,7 +169,7 @@ footer {
     background-color: $footerBarBgColor;
     height: 100px;
     @include flex();
-    #container {
+    .container {
         @include flex(space-between,center);
         button {
             font-size: 1rem;

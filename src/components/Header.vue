@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div id="container">
+        <div class="container">
             <img src='../assets/img/dc-logo.png' :alt='logo.alt' class="logo">
             <nav>
                 <ul>
@@ -79,7 +79,7 @@ header {
     @include flex('',center);
     height: 100px;
     min-width: 850px;
-    #container {
+    .container {
         @include flex(space-between,center);
         img.logo {
             height: 70px;
