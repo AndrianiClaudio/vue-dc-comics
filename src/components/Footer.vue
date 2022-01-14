@@ -136,18 +136,23 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/scss/partials/_variables.scss";
-    
+@import "../assets/scss/partials/_mixins.scss";
+footer {
+    min-width: 950px;
+}
 #footer-main {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
     background-image: url('../assets/img/footer-bg.jpg');
     #container {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
         background-image: url('../assets/img/dc-logo-bg.png');
         background-position: right;
         background-repeat: no-repeat;
-        display: flex;
-        gap: 1.5rem;
+        // display: flex;
+        @include flex();
+        gap: 3.5rem;
         h2 {
+            color: white;
             text-transform: uppercase;
             margin: 1rem 0;
         }
@@ -156,6 +161,7 @@ export default {
             a {
                 text-transform: capitalize;
                 color: grey;
+
             }
         }
     }
@@ -163,16 +169,14 @@ export default {
 #footer-bar {
     background-color: $footerBarBgColor;
     height: 100px;
-    display: flex;
-
+    // display: flex;
+    @include flex();
     #container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(space-between,center);
         button {
             font-size: 1rem;
-            padding: 0.5rem 1.2rem;
-            border: 2px solid blue;
+            padding: 1rem;
+            border: 2px solid $headerActiveLinkColor;
             background-color: $footerBarBgColor;
             color: white;
             &:hover {
@@ -180,9 +184,15 @@ export default {
             }
         }
         ul {
-            display: flex;
-            align-items: center;
+            @include flex('',center);
+            // display: flex;
+            // align-items: center;
             gap: 1.5rem;
+            a {
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #0282f9;
+            }
         }
     }
 }

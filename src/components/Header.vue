@@ -75,32 +75,39 @@ export default {
 </script>
 <style scoped lang = 'scss'>
 @import "../assets/scss/partials/_variables.scss";
+@import "../assets/scss/partials/_mixins.scss";
 header {
-    display: flex;
-    align-items: center;
+    @include flex('',center);
     height: 100px;
+    min-width: 850px;
     #container {
-        display: flex;
+        @include flex(space-between,center);
+        /* display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-between; */
         img.logo {
             height: 70px;
         }
         ul {
-            display: flex;
+            /* display: flex; */
+            @include flex();
             li {
-                display: flex;
+                @include flex($align:center);
+                /* display: flex;
+                align-items: center; */
                 text-transform: uppercase;
                 height: 100px;
-                align-items: center;
                 padding: 0.5rem;
                 a {
-                    display: flex;
-                    align-items: center;
+                    @include flex($align:center);
+                    /* display: flex;
+                    align-items: center; */
                     height: 100px;
                     color: black;
                     border-bottom: 5px solid white;
+                    font-weight: bold;
                     &.active {
+                        color: $headerActiveLinkColor;
                         border-bottom: 5px solid $headerActiveLinkColor;
                         /* border-bottom: 5px solid aqua; */
                     }
