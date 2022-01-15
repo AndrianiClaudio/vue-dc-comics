@@ -4,7 +4,8 @@
             <img :src='logo.src' :alt='logo.alt' class="logo">
             <ul>
                 <Menu 
-                v-for="(item,index) in menu.items" v-bind:key="index"
+                v-for="(item,index) in menu.items"
+                v-bind:key="item+index"
                 :item="item"
                 :active='index == menu.activeIndex'
                 @click.native="activeItem(index)"

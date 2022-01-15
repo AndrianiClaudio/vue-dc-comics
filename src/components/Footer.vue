@@ -4,17 +4,17 @@
             <div class="container">
                 <div 
                 v-for='(col,index) in cols' 
-                v-bind:key='index'
+                v-bind:key='col+index'
                 class="col"
                 >
                     <div v-for="(title,index) in col.title"
-                    v-bind:key='index'
+                    v-bind:key='title+index'
                     >
                         <h2>{{title}}</h2>
                         <ul>
                             <li
                             v-for="(item,index) in col.items[index]"
-                            v-bind:key='index'
+                            v-bind:key='item+index'
                             >
                                 <a href="#">{{item}}</a>
                             </li>
@@ -29,18 +29,18 @@
                 <nav>
                     <ul>
                         <li
-                        v-for="(link,index) in footerLinks.text"
-                        v-bind:key='index'
+                        v-for="(linkTxt,index) in footerLinks.text"
+                        v-bind:key='linkTxt+index'
                         >
-                            <a href="#">{{link}}</a>
+                            <a href="#">{{linkTxt}}</a>
                         </li>
                         <li
-                        v-for="(link,index) in footerLinks.img"
-                        v-bind:key='index'
+                        v-for="(linkImg,index) in footerLinks.img"
+                        v-bind:key='linkImg+index'
                         >
                             <img
-                            :src="link.src"
-                            :alt="link.alt">
+                            :src="linkImg.src"
+                            :alt="linkImg.alt">
                         </li>
                     </ul>
                 </nav>
@@ -96,24 +96,6 @@ export default {
                     },
                 ]
             }
-// <!-- <li>
-//     <a href="#">FOLLOW US</a>
-// </li>
-// <li>
-//     <a href="#"><img src="../assets/img/footer-facebook.png" alt=""></a>
-// </li>
-// <li>
-//     <a href="#"><img src="../assets/img/footer-twitter.png" alt=""></a>
-// </li>
-// <li>
-//     <a href="#"><img src="../assets/img/footer-youtube.png" alt=""></a>
-// </li>
-// <li>
-//     <a href="#"><img src="../assets/img/footer-pinterest.png" alt=""></a>
-// </li>
-// <li>
-//     <a href="#"><img src="../assets/img/footer-periscope.png" alt=""></a>
-// </li> -->
         }
     }
 }

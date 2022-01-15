@@ -4,7 +4,8 @@
         <div class="cards">
             <ul class="container">
                 <Card
-                    v-for="(card,index) in cards" v-bind:key="index"
+                    v-for="(card,index) in cards"
+                    v-bind:key="card+index"
                     :thumb='card.thumb'
                     :series='card.series'
                 />
@@ -14,7 +15,7 @@
             <ul class="container">
                 <Menu 
                 v-for="(item,index) in menu.items"
-                v-bind:key='index'
+                v-bind:key='item+index'
                 :src=item.src
                 :text=item.text
                 />
