@@ -7,7 +7,7 @@
     gap: $gap;
 }
 
-//imposta height e width... default: auto
+// imposta height e width... default: auto
 @mixin dim($h:auto,$w:auto,$pr:0,$pl:0,$pb:0,$pt:0,$mr:0,$ml:0,$mb:0,$mt:0,$pad:0,$mar:0) {
     height: $h;
     width: $w;

@@ -2,96 +2,24 @@
     <footer>
         <div id="footer-main">
             <div class="container">
-                <div class="col">
-                    <h2>dc comics</h2>
-                    <ul>
-                        <li>
-                            <a href="#">characters</a>
-                        </li>
-                        <li>
-                            <a href="#">comics</a>
-                        </li>
-                        <li>
-                            <a href="#">movies</a>
-                        </li>
-                        <li>
-                            <a href="#">TV</a>
-                        </li>
-                        <li>
-                            <a href="#">games</a>
-                        </li>
-                        <li>
-                            <a href="#">videos</a>
-                        </li>
-                        <li>
-                            <a href="#">news</a>
-                        </li>
-                    </ul>
-                    <h2>shop</h2>
-                    <ul>
-                        <li>
-                            <a href="#">Shop DC</a>
-                        </li>
-                        <li>
-                            <a href="#">Shop DC Collectibles</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h2>dc</h2>
-                    <ul>
-                        <li>
-                            <a href="#">terms Of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Privacy policy (news)</a>
-                        </li>
-                        <li>
-                            <a href="#">ad Choices</a>
-                        </li>
-                        <li>
-                            <a href="#">advertising</a>
-                        </li>
-                        <li>
-                            <a href="#">jobs</a>
-                        </li>
-                        <li>
-                            <a href="#">talent Workspace</a>
-                        </li>
-                        <li>
-                            <a href="#">CPSC Certificates</a>
-                        </li>
-                        <li>
-                            <a href="#">Ratings</a>
-                        </li>
-                        <li>
-                            <a href="#">shop Help</a>
-                        </li>
-                        <li>
-                            <a href="#">contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col">
-
-                    <h2>sites</h2>
-                    <ul>
-                        <li>
-                            <a href="#">DC</a>
-                        </li>
-                        <li>
-                            <a href="#">MAD Magazine</a>
-                        </li>
-                        <li>
-                            <a href="#">DC Kids</a>
-                        </li>
-                        <li>
-                            <a href="#">DC Universe</a>
-                        </li>
-                        <li>
-                            <a href="#">DC Power Visa</a>
-                        </li>
-                    </ul>
+                <div 
+                v-for='(col,index) in cols' 
+                v-bind:key='index'
+                class="col"
+                >
+                    <div v-for="(title,index) in col.title"
+                    v-bind:key='index'
+                    >
+                        <h2>{{title}}</h2>
+                        <ul>
+                            <li
+                            v-for="(item,index) in col.items[index]"
+                            v-bind:key='index'
+                            >
+                                <a href="#">{{item}}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,8 +56,26 @@
 <script>
 export default {
     name: 'Footer',
+    data() {
+        return {
+            cols: [
+                {
+                    title: ['dc comics','shop'],
+                    items: [['characters','comics','movies','TV','games','videos','news'],['shop DC','shop dc collctibles']],
+                },
+                {
+                    title: ['dc'],
+                    items: [['terms of use','Privacy policy (news)','ad Choices','advertising','jobs','talent Workspace','CPSC Certificates','Ratings','shop Help','contact Us']],
+                },
+                {
+                    title: ['sites'],
+                    items: [['DC','MAD magazine','DC kids','DC Universe','DC Power Visa']],
+                },
+            ],
+        }
+    }
 }
-    
+
 </script>
 
 <style scoped lang="scss">
