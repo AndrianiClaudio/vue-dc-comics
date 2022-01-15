@@ -3,11 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  min-width: 980px;
-}
 .container {
-  width: 80%;
+  @include flex();
+  width: $containerDefaultWidth;
   margin: 0 auto;
 }
 
@@ -16,9 +14,6 @@ li {
 }
 a {
   text-decoration: none;
-  &:visited {
-    color: #01407c;
-  }
 }
 
 #app {

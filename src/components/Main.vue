@@ -1,43 +1,39 @@
 <template>
     <main>
-        <div id="jumbo">
-            <div id="container">
-                <!-- <h1> Content goes here </h1> -->
-            </div>
-        </div>
-        <div class="container">
-            <div class="cards">
+        <div id="jumbo"></div>
+
+        <div class="cards">
+            <ul class="container">
                 <Card
                     v-for="(card,index) in cards" v-bind:key="index"
                     :thumb='card.thumb'
                     :series='card.series'
                 />
-            </div>
+            </ul>
         </div>
+
         <div id="menu">
-            <div id="container">
-                <ul>
-                    <li>
-                        <a href="#"><img src="../assets/img/buy-comics-digital-comics.png" alt="#"><span>Digital comics</span></a>
+            <ul class="container">
+                <li>
+                    <a href="#"><img src="../assets/img/buy-comics-digital-comics.png" alt="#"><span>Digital comics</span></a>
 
-                    </li>
-                    <li>
-                        <a href="#"><img src="../assets/img/buy-comics-merchandise.png" alt="#"><span>DC merchandise</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="../assets/img/buy-comics-subscriptions.png" alt="#"><span>subscription</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../assets/img/buy-comics-merchandise.png" alt="#"><span>DC merchandise</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../assets/img/buy-comics-subscriptions.png" alt="#"><span>subscription</span></a>
 
-                    </li>
-                    <li>
-                        <a href="#"><img src="../assets/img/buy-comics-shop-locator.png" alt="#"><span>comic shop locator</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../assets/img/buy-comics-shop-locator.png" alt="#"><span>comic shop locator</span></a>
 
-                    </li>
-                    <li>
-                        <a href="#"><img src="../assets/img/buy-dc-power-visa.svg" alt="#"><span>dc power visa</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../assets/img/buy-dc-power-visa.svg" alt="#"><span>dc power visa</span></a>
 
-                    </li>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
     </main>
 </template>
@@ -134,56 +130,30 @@ export default {
 <style scoped lang='scss'>
 @import "../assets/scss/partials/_variables.scss";
 @import "../assets/scss/partials/_mixins.scss";
-main {
-     min-width: 980px;
-}
 #jumbo {
-    // background-color: $jumboBgColor;
-    height:250px;
+    @include dim($h:350px);
     background-image: url('../assets/img/jumbotron.jpg');
-    background-size: cover;
     background-position: top;
-    @include flex($align:center);
-    #container {
-        color: white;
+    background-size: cover;
+}
+.cards {
+    @include dim($w:100%,$pt:4rem,$pb:4rem);
+    background-color: #25383f;
+    .container {
+        @include flex($wra:wrap,$gap:1rem);
     }
 }
-
-.container {
-    min-width: 980px;
-    width: 100%;
-    background-color: black;
-    .cards {
-        @include flex();
-        margin: 0 auto;
-        width: 60%;
-        flex-wrap: wrap;
-        padding: 2rem;
-    }
-}
-
 #menu {
     background-color: $headerActiveLinkColor;
-    @include flex($align:center);
-    min-height: 160px;
-    ul {
-        @include flex($justify:space-around);
-        li {
-            @include flex($align:center);
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: white;
+    @include dim($pt:3rem,$pb:3rem);
+    .container {
+        @include flex($jus:center,$ali:center,$gap:1.5rem);
+        a {
+            @include flex($ali:center);
             text-transform: uppercase;
+            color: white;
             img {
-                width: 50px;    
-            }
-            a {
-                @include flex($align:center);
-                gap: 0.5rem;
-                color: white;
-                &:visited {
-                    color: inherit;
-                }
+                @include dim($h:60px);
             }
         }
     }

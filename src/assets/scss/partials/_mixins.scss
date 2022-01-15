@@ -1,5 +1,26 @@
-@mixin flex ($justify:null,$align:null) {
+@mixin flex ($ali:null,$dir:row,$jus:null,$gap:0.5rem,$wra:nowrap) {
     display: flex;
-    justify-content: $justify;
-    align-items: $align;
+    justify-content: $jus;
+    flex-direction: $dir;
+    align-items: $ali;
+    flex-wrap: $wra;
+    gap: $gap;
+}
+
+//imposta height e width... default: auto
+@mixin dim($h:auto,$w:auto,$pr:0,$pl:0,$pb:0,$pt:0,$mr:0,$ml:0,$mb:0,$mt:0,$pad:0,$mar:0) {
+    height: $h;
+    width: $w;
+    @if($pad != 0) {
+        padding: $pad;
+    } 
+    @else {
+        padding: $pt $pr $pb $pl;
+    }
+    @if($mar != 0) {
+        padding: $pad;
+    }
+    @else {
+        margin: $mt $mr $mb $ml;
+    }
 }

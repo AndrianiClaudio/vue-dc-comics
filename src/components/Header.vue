@@ -1,110 +1,68 @@
 <template>
     <header>
         <div class="container">
-            <img src='../assets/img/dc-logo.png' :alt='logo.alt' class="logo">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">
-                            characters
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="active">
-                            comics
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            movies
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            tv
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            games
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            collectibles
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            videos
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            fans
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            news
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            shop
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <img :src='logo.src' :alt='logo.alt' class="logo">
+            <ul>
+                <Menu 
+                v-for="(item,index) in items" v-bind:key="index"
+                :item="item"
+                :active='index === activeIndex'
+                @click.native="activeItem(index)"
+                />
+            </ul>
         </div>
     </header>
 </template>
 
 <script>
+import Menu from './header/Menu.vue';
+
 export default {
     name: 'Header',
+    components: {
+        Menu,
+    },
     data() {
         return {
             logo: {
+                src: require('../assets/img/dc-logo.png'),
                 alt: 'logo DC'
-            }
+            },
+            activeIndex: 1,
+            items: [
+                'characters',
+                'comics',
+                'movies',
+                'TV',
+                'games',
+                'collectibles',
+                'videos',
+                'fans',
+                'news',
+                'shop',
+            ]
         }
+    },
+    methods: {
+        activeItem(index) {
+            this.activeIndex = index;
+        },
     }
 }
 </script>
 <style scoped lang = 'scss'>
-@import "../assets/scss/partials/_variables.scss";
 @import "../assets/scss/partials/_mixins.scss";
 header {
-    @include flex('',center);
-    height: 100px;
-    min-width: 850px;
+    @include flex($ali:center);
+    @include dim($h:100px);
     .container {
-        @include flex(space-between,center);
+        @include flex($ali:center,$jus:space-between);
         img.logo {
-            height: 70px;
+            @include dim($h:70px);
         }
         ul {
             @include flex();
-            li {
-                @include flex($align:center);
-                text-transform: uppercase;
-                height: 100px;
-                padding: 0.5rem;
-                a {
-                    @include flex($align:center);
-                    height: 100px;
-                    color: black;
-                    border-bottom: 5px solid white;
-                    font-weight: bold;
-                    &.active {
-                        color: $headerActiveLinkColor;
-                        border-bottom: 5px solid $headerActiveLinkColor;
-                    }
-                }
-            }
         }
     }
 }
-
 </style>

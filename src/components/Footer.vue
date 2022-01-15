@@ -128,8 +128,6 @@
 <script>
 export default {
     name: 'Footer',
-    // data() {
-    // }
 }
     
 </script>
@@ -137,43 +135,40 @@ export default {
 <style scoped lang="scss">
 @import "../assets/scss/partials/_variables.scss";
 @import "../assets/scss/partials/_mixins.scss";
-footer {
-    min-width: 980px;
-}
 #footer-main {
+    @include flex ($jus:center);
     background-image: url('../assets/img/footer-bg.jpg');
-    #container {
-        padding-top: 3.5rem;
-        padding-bottom: 3.5rem;
+    // @include dim($pt:3rem,$pb:3rem);
+    .container {
+        @include flex ($gap:2.5rem);
+        @include dim($w:$containerDefaultWidth,$pt:2.5rem,$pb:2.5rem);
         background-image: url('../assets/img/dc-logo-bg.png');
-        background-position: right;
         background-repeat: no-repeat;
-        @include flex();
-        gap: 3.5rem;
-        h2 {
-            color: white;
-            text-transform: uppercase;
-            margin: 1rem 0;
-        }
-        li {
-            padding-bottom: 0.5rem;
-            a {
-                text-transform: capitalize;
-                color: grey;
-
+        background-position: right;
+        .col {
+            h2 {
+                text-transform: uppercase;
+                color:white;
+            }
+            ul {
+                @include dim($pb:1.5rem);
+                a {
+                    color: grey;
+                    text-transform: capitalize;
+                }
             }
         }
     }
 }
 #footer-bar {
-    background-color: $footerBarBgColor;
-    height: 100px;
     @include flex();
+    background-color: $footerBarBgColor;
+    @include dim($h:100px);
     .container {
-        @include flex(space-between,center);
+        @include flex($jus:space-between,$ali:center);
         button {
+            @include dim($pad:1rem);
             font-size: 1rem;
-            padding: 1rem;
             border: 2px solid $headerActiveLinkColor;
             background-color: $footerBarBgColor;
             color: white;
@@ -182,7 +177,7 @@ footer {
             }
         }
         ul {
-            @include flex($align:center);
+            @include flex($ali:center);
             gap: 1.5rem;
             a {
                 font-size: 1.25rem;
