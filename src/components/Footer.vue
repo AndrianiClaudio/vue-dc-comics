@@ -25,26 +25,22 @@
         </div>
         <div id='footer-bar'>
             <div class="container">
-                <button>SIGN-UP NOW</button>
+                <button>{{button.text}}</button>
                 <nav>
                     <ul>
-                        <li>
-                            <a href="#">FOLLOW US</a>
+                        <li
+                        v-for="(link,index) in footerLinks.text"
+                        v-bind:key='index'
+                        >
+                            <a href="#">{{link}}</a>
                         </li>
-                        <li>
-                            <a href="#"><img src="../assets/img/footer-facebook.png" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="../assets/img/footer-twitter.png" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="../assets/img/footer-youtube.png" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="../assets/img/footer-pinterest.png" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="../assets/img/footer-periscope.png" alt=""></a>
+                        <li
+                        v-for="(link,index) in footerLinks.img"
+                        v-bind:key='index'
+                        >
+                            <img
+                            :src="link.src"
+                            :alt="link.alt">
                         </li>
                     </ul>
                 </nav>
@@ -72,6 +68,52 @@ export default {
                     items: [['DC','MAD magazine','DC kids','DC Universe','DC Power Visa']],
                 },
             ],
+            button: {
+                text: 'SIGN-UP NOW'
+            },
+            footerLinks: {
+                text: ['follow us'],
+                img: [
+                    {
+                        src: require('../assets/img/footer-facebook.png'),
+                        alt: 'facebook',
+                    },
+                    {
+                        src: require('../assets/img/footer-twitter.png'),
+                        alt: 'twitter',
+                    },
+                    {
+                        src: require('../assets/img/footer-youtube.png'),
+                        alt: 'youtube',
+                    },
+                    {
+                        src: require('../assets/img/footer-pinterest.png'),
+                        alt: 'pinterest',
+                    },
+                    {
+                        src: require('../assets/img/footer-periscope.png'),
+                        alt: 'periscope',
+                    },
+                ]
+            }
+// <!-- <li>
+//     <a href="#">FOLLOW US</a>
+// </li>
+// <li>
+//     <a href="#"><img src="../assets/img/footer-facebook.png" alt=""></a>
+// </li>
+// <li>
+//     <a href="#"><img src="../assets/img/footer-twitter.png" alt=""></a>
+// </li>
+// <li>
+//     <a href="#"><img src="../assets/img/footer-youtube.png" alt=""></a>
+// </li>
+// <li>
+//     <a href="#"><img src="../assets/img/footer-pinterest.png" alt=""></a>
+// </li>
+// <li>
+//     <a href="#"><img src="../assets/img/footer-periscope.png" alt=""></a>
+// </li> -->
         }
     }
 }
@@ -113,6 +155,7 @@ export default {
         @include flex($jus:space-between,$ali:center);
         button {
             @include dim($pad:1rem);
+            text-transform: uppercase;
             font-size: 1rem;
             border: 2px solid $headerActiveLinkColor;
             background-color: $footerBarBgColor;
@@ -125,6 +168,7 @@ export default {
             @include flex($ali:center);
             gap: 1.5rem;
             a {
+                text-transform: uppercase;
                 font-size: 1.25rem;
                 font-weight: bold;
                 color: #0282f9;
