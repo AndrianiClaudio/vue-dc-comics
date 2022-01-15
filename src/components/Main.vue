@@ -1,7 +1,6 @@
 <template>
     <main>
         <div id="jumbo"></div>
-
         <div class="cards">
             <ul class="container">
                 <Card
@@ -11,28 +10,14 @@
                 />
             </ul>
         </div>
-
         <div id="menu">
             <ul class="container">
-                <li>
-                    <a href="#"><img src="../assets/img/buy-comics-digital-comics.png" alt="#"><span>Digital comics</span></a>
-
-                </li>
-                <li>
-                    <a href="#"><img src="../assets/img/buy-comics-merchandise.png" alt="#"><span>DC merchandise</span></a>
-                </li>
-                <li>
-                    <a href="#"><img src="../assets/img/buy-comics-subscriptions.png" alt="#"><span>subscription</span></a>
-
-                </li>
-                <li>
-                    <a href="#"><img src="../assets/img/buy-comics-shop-locator.png" alt="#"><span>comic shop locator</span></a>
-
-                </li>
-                <li>
-                    <a href="#"><img src="../assets/img/buy-dc-power-visa.svg" alt="#"><span>dc power visa</span></a>
-
-                </li>
+                <Menu 
+                v-for="(item,index) in menu.items"
+                v-bind:key='index'
+                :src=item.src
+                :text=item.text
+                />
             </ul>
         </div>
     </main>
@@ -40,11 +25,13 @@
 
 <script>
 import Card from './main/Card.vue';
+import Menu from './main/Menu.vue';
 
 export default {
     name: 'Main',
     components: {
         Card,
+        Menu,
     },
     data() {
         return {
@@ -121,7 +108,31 @@ export default {
                 "series": "Catwoman",
                 "type": "graphic novel"
             }
-            ]
+            ],
+            menu: {
+                items: [
+                    {
+                        src:require('../assets/img/buy-comics-digital-comics.png'),
+                        text:'Digital comics'
+                    },
+                    {
+                        src:require('../assets/img/buy-comics-merchandise.png'),
+                        text:'DC merchandise'
+                    },
+                    {
+                        src:require('../assets/img/buy-comics-subscriptions.png'),
+                        text:'subscription'
+                    },
+                    {
+                        src:require('../assets/img/buy-comics-shop-locator.png'),
+                        text:'comic shop locator'
+                    },
+                    {
+                        src:require('../assets/img/buy-dc-power-visa.svg'),
+                        text:'dc power visa'
+                    },
+                ]
+            }
         }
     },
 }    
@@ -148,14 +159,14 @@ export default {
     @include dim($pt:3rem,$pb:3rem);
     .container {
         @include flex($jus:center,$ali:center,$gap:1.5rem);
-        a {
-            @include flex($ali:center);
-            text-transform: uppercase;
-            color: white;
-            img {
-                @include dim($h:60px);
-            }
-        }
+        // a {
+        //     @include flex($ali:center);
+        //     text-transform: uppercase;
+        //     color: white;
+        //     img {
+        //         @include dim($h:60px);
+        //     }
+        // }
     }
 }
 </style>

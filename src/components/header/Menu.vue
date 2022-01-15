@@ -1,9 +1,9 @@
 <template>
-<li>
-    <a href="#" :class="(active) ? 'active' : ''">
-        {{item}}
-    </a>
-</li>
+    <li>
+        <a href="#" :class="{active:active}">
+            {{item}}
+        </a>
+    </li>
 </template>
 
 <script>
@@ -13,9 +13,6 @@ export default {
         item:String,
         active:Boolean,
     },
-    methods: {
-        
-    }
 }
 </script>
 

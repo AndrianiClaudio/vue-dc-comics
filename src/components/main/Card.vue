@@ -1,8 +1,10 @@
 <template>
-<li class="card">
-    <img :src="thumb" alt="#">
-    <strong class="series">{{series}}</strong>
-</li>
+    <li class="card">
+        <img :src="thumb" alt="#">
+        <strong class="series">
+            {{series}}
+        </strong>
+    </li>
 </template>
 
 <script>

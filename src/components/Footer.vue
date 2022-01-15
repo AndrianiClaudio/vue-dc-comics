@@ -138,7 +138,6 @@ export default {
 #footer-main {
     @include flex ($jus:center);
     background-image: url('../assets/img/footer-bg.jpg');
-    // @include dim($pt:3rem,$pb:3rem);
     .container {
         @include flex ($gap:2.5rem);
         @include dim($w:$containerDefaultWidth,$pt:2.5rem,$pb:2.5rem);

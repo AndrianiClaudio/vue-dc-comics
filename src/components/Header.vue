@@ -4,9 +4,9 @@
             <img :src='logo.src' :alt='logo.alt' class="logo">
             <ul>
                 <Menu 
-                v-for="(item,index) in items" v-bind:key="index"
+                v-for="(item,index) in menu.items" v-bind:key="index"
                 :item="item"
-                :active='index === activeIndex'
+                :active='index == menu.activeIndex'
                 @click.native="activeItem(index)"
                 />
             </ul>
@@ -16,7 +16,6 @@
 
 <script>
 import Menu from './header/Menu.vue';
-
 export default {
     name: 'Header',
     components: {
@@ -26,26 +25,28 @@ export default {
         return {
             logo: {
                 src: require('../assets/img/dc-logo.png'),
-                alt: 'logo DC'
+                alt: 'logo DC comics.'
             },
-            activeIndex: 1,
-            items: [
-                'characters',
-                'comics',
-                'movies',
-                'TV',
-                'games',
-                'collectibles',
-                'videos',
-                'fans',
-                'news',
-                'shop',
-            ]
+            menu: {
+                activeIndex: 1,
+                items: [
+                    'characters',
+                    'comics',
+                    'movies',
+                    'TV',
+                    'games',
+                    'collectibles',
+                    'videos',
+                    'fans',
+                    'news',
+                    'shop',
+                ],
+            },
         }
     },
     methods: {
         activeItem(index) {
-            this.activeIndex = index;
+            this.menu.activeIndex = index;
         },
     }
 }
