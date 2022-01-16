@@ -2,25 +2,11 @@
     <footer>
         <div id="footer-main">
             <div class="container">
-                <div 
-                v-for='(col,index) in cols' 
-                v-bind:key='col+index'
-                class="col"
-                >
-                    <div v-for="(title,index) in col.title"
-                    v-bind:key='title+index'
-                    >
-                        <h2>{{title}}</h2>
-                        <ul>
-                            <li
-                            v-for="(item,index) in col.items[index]"
-                            v-bind:key='item+index'
-                            >
-                                <a href="#">{{item}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <FooterMain 
+                v-for="(col,index) in cols"
+                v-bind:key="col+index"
+                :col='col'
+                />
             </div>
         </div>
         <div id='footer-bar'>
@@ -50,8 +36,13 @@
 </template>
 
 <script>
+import FooterMain from './footer/FooterMain.vue';
 export default {
     name: 'Footer',
+    components: {
+        FooterMain,
+        // FooterBar
+    },
     data() {
         return {
             cols: [
@@ -111,18 +102,7 @@ export default {
     .container {
         @include flex ($gap:2.5rem);
         @include dim($w:$containerDefaultWidth,$pad:2.5rem 0);
-        @include bgSet($url: '../assets/img/dc-logo-bg.png',$rep: no-repeat,$pos:right);
-        .col {
-            h2 {
-                @include text($tra:uppercase,$col:white);
-            }
-            ul {
-                @include dim($pad:0 0 1.5rem 0);
-                a {
-                    @include text($tra:capitalize,$col:grey);
-                }
-            }
-        }
+        @include bgSet($url: '../assets/img/dc-logo-bg.png',$siz:null,$rep: no-repeat,$pos:right);
     }
 }
 #footer-bar {
