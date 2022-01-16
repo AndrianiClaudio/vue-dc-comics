@@ -144,7 +144,7 @@ export default {
 @import "../assets/scss/partials/_variables.scss";
 #jumbo {
     @include dim($h:$jumboHeight);
-    @include bgSet($url: '../assets/img/jumbotron.jpg',$pos:top,$siz:color);
+    @include bgSet($url: '../assets/img/jumbotron.jpg',$pos:top);
 }
 .cards {
     @include dim($w:100%,$pad:4rem 0);

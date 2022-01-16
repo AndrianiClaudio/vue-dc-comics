@@ -7,33 +7,23 @@
     gap: $gap;
     flex-basis:$bas;
 }
-
-// imposta height e width... default: auto
-@mixin dim($h:auto,$w:auto,$pad:0,$mar:0) {
+@mixin dim($h:null,$w:null,$pad:0,$mar:0) {
     height: $h;
     width: $w;
     padding: $pad;
     margin:$mar;
 }
-// @mixin dim($h:auto,$w:auto,$pad:0,$mar:0,$minh:null,$minw:null,$maxh:null,$maxw:null) {
-//     height: $h;
-//     width: $w;
-//     min-height: $minh;
-//     max-height: $maxh;
-//     min-width: $minw;
-//     max-width: $maxw;
-//     padding: $pad;
-//     margin:$mar;
-// }
-
-@mixin text ($siz: 100%,$tra:none,$col:inherit,$wei:500) {
+@mixin reset() {
+    @include dim();
+    box-sizing: border-box;
+}
+@mixin text ($siz: 100%,$tra:null,$col:null,$wei:500) {
     color: $col;
     font-size: $siz;
     text-transform: $tra;
     font-weight: $wei;
 }
-
-@mixin bgSet ($url:null,$col:null,$pos:none,$siz:none,$rep:no-repeat) {
+@mixin bgSet ($url:null,$col:null,$pos:null,$siz:cover,$rep:no-repeat) {
     background-image: url($url);
     background-color: $col;
     background-position: $pos;

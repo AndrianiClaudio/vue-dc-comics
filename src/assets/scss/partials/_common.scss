@@ -1,12 +1,9 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  @include reset();
 }
 .container {
   @include flex();
-  width: $containerDefaultWidth;
-  margin: 0 auto;
+  @include dim($w:$containerDefaultWidth,$mar:0 auto);  
 }
 
 li {
@@ -15,8 +12,3 @@ li {
 a {
   text-decoration: none;
 }
-
-// #app {
-//   width: 100vw;
-//   height: 100%;
-// }
