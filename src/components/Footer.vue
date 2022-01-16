@@ -10,38 +10,19 @@
             </div>
         </div>
         <div id='footer-bar'>
-            <div class="container">
-                <button>{{button.text}}</button>
-                <nav>
-                    <ul>
-                        <li
-                        v-for="(linkTxt,index) in footerLinks.text"
-                        v-bind:key='linkTxt+index'
-                        >
-                            <a href="#">{{linkTxt}}</a>
-                        </li>
-                        <li
-                        v-for="(linkImg,index) in footerLinks.img"
-                        v-bind:key='linkImg+index'
-                        >
-                            <img
-                            :src="linkImg.src"
-                            :alt="linkImg.alt">
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <FooterBar />
         </div>
     </footer>
 </template>
 
 <script>
 import FooterMain from './footer/FooterMain.vue';
+import FooterBar from './footer/FooterBar.vue';
 export default {
     name: 'Footer',
     components: {
         FooterMain,
-        // FooterBar
+        FooterBar
     },
     data() {
         return {
@@ -59,34 +40,34 @@ export default {
                     items: [['DC','MAD magazine','DC kids','DC Universe','DC Power Visa']],
                 },
             ],
-            button: {
-                text: 'SIGN-UP NOW'
-            },
-            footerLinks: {
-                text: ['follow us'],
-                img: [
-                    {
-                        src: require('../assets/img/footer-facebook.png'),
-                        alt: 'facebook',
-                    },
-                    {
-                        src: require('../assets/img/footer-twitter.png'),
-                        alt: 'twitter',
-                    },
-                    {
-                        src: require('../assets/img/footer-youtube.png'),
-                        alt: 'youtube',
-                    },
-                    {
-                        src: require('../assets/img/footer-pinterest.png'),
-                        alt: 'pinterest',
-                    },
-                    {
-                        src: require('../assets/img/footer-periscope.png'),
-                        alt: 'periscope',
-                    },
-                ]
-            }
+            // button: {
+            //     text: 'SIGN-UP NOW'
+            // },
+            // footerLinks: {
+            //     text: ['follow us'],
+            //     img: [
+            //         {
+            //             src: require('../assets/img/footer-facebook.png'),
+            //             alt: 'facebook',
+            //         },
+            //         {
+            //             src: require('../assets/img/footer-twitter.png'),
+            //             alt: 'twitter',
+            //         },
+            //         {
+            //             src: require('../assets/img/footer-youtube.png'),
+            //             alt: 'youtube',
+            //         },
+            //         {
+            //             src: require('../assets/img/footer-pinterest.png'),
+            //             alt: 'pinterest',
+            //         },
+            //         {
+            //             src: require('../assets/img/footer-periscope.png'),
+            //             alt: 'periscope',
+            //         },
+            //     ]
+            // }
         }
     }
 }
@@ -109,23 +90,5 @@ export default {
     @include flex();
     @include bgSet($col: $footerBarBgColor);
     @include dim($h:$footerBarHeight);
-    .container {
-        @include flex($jus:space-between,$ali:center);
-        button {
-            @include dim($pad:1rem);
-            @include text($tra:uppercase,$siz:1rem,$col:white);
-            @include bgSet($col: $footerBarBgColor);
-            border: 2px solid $headerActiveLinkColor;
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        ul {
-            @include flex($ali:center,$gap:1.5rem);
-            a {
-                @include text($tra:uppercase,$siz: 1.25rem,$wei:bold,$col:$footerBarTextColor);
-            }
-        }
-    }
 }
 </style>

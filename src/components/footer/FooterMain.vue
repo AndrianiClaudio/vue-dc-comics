@@ -1,6 +1,6 @@
 <template>
     <div class="col">
-        <div v-for="(title,index) in col.title"
+        <section v-for="(title,index) in col.title"
         v-bind:key='title+index'
         >
             <h2>{{title}}</h2>
@@ -12,7 +12,7 @@
                     <a href="#">{{item}}</a>
                 </li>
             </ul>
-        </div>
+        </section>
     </div>
 </template>
 
