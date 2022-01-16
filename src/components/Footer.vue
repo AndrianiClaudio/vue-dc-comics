@@ -40,34 +40,6 @@ export default {
                     items: [['DC','MAD magazine','DC kids','DC Universe','DC Power Visa']],
                 },
             ],
-            // button: {
-            //     text: 'SIGN-UP NOW'
-            // },
-            // footerLinks: {
-            //     text: ['follow us'],
-            //     img: [
-            //         {
-            //             src: require('../assets/img/footer-facebook.png'),
-            //             alt: 'facebook',
-            //         },
-            //         {
-            //             src: require('../assets/img/footer-twitter.png'),
-            //             alt: 'twitter',
-            //         },
-            //         {
-            //             src: require('../assets/img/footer-youtube.png'),
-            //             alt: 'youtube',
-            //         },
-            //         {
-            //             src: require('../assets/img/footer-pinterest.png'),
-            //             alt: 'pinterest',
-            //         },
-            //         {
-            //             src: require('../assets/img/footer-periscope.png'),
-            //             alt: 'periscope',
-            //         },
-            //     ]
-            // }
         }
     }
 }
