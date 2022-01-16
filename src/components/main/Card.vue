@@ -19,13 +19,17 @@ export default {
 
 <style scoped lang='scss'>
 @import "../../assets/scss/partials/_mixins.scss";
+@import "../../assets/scss/partials/_variables.scss";
 .card {
-    @include flex($dir:column,$gap:1rem);
-    flex-basis: calc((100% / 6) - 1rem);
+    @include flex($dir:column,$gap:1rem,$bas:$cardWidth);
+    img{
+        height: 150px;
+        width: 150px;
+        max-height: 400px;
+        max-width: 400px;
+    }
     .series {
-        text-transform: uppercase;
-        color: white;
-        font-size: .85rem;
+        @include text($siz: .85rem,$tra:uppercase,$col:white);
     }
 }
 </style>

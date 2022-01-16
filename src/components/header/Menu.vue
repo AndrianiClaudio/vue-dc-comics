@@ -22,11 +22,10 @@ export default {
 li {
     a {
         @include flex($ali:center);
-        @include dim($h:100px);
-        text-transform: uppercase;
-        color: black;
+        @include dim($h:$headerHeight);
+        @include text($tra: uppercase,$col:black);
         &.active {
-            background: linear-gradient(to bottom, white 95%, $headerActiveLinkColor 5%);
+            background: linear-gradient(to bottom, $headerBgColor calc(100% - $headerActiveLinkBorderDim), $headerActiveLinkColor $headerActiveLinkBorderDim);
         }
     }
 }

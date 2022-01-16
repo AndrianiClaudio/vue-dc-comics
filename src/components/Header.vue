@@ -54,13 +54,14 @@ export default {
 </script>
 <style scoped lang = 'scss'>
 @import "../assets/scss/partials/_mixins.scss";
+@import "../assets/scss/partials/_variables.scss";
 header {
     @include flex($ali:center);
-    @include dim($h:100px);
+    @include dim($h:$headerHeight);
     .container {
         @include flex($ali:center,$jus:space-between);
         img.logo {
-            @include dim($h:70px);
+            @include dim($h:$headerLogoDim);
         }
         ul {
             @include flex();

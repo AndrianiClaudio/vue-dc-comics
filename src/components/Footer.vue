@@ -107,23 +107,19 @@ export default {
 @import "../assets/scss/partials/_mixins.scss";
 #footer-main {
     @include flex ($jus:center);
-    background-image: url('../assets/img/footer-bg.jpg');
+    @include bgSet($url: '../assets/img/footer-bg.jpg');
     .container {
         @include flex ($gap:2.5rem);
-        @include dim($w:$containerDefaultWidth,$pt:2.5rem,$pb:2.5rem);
-        background-image: url('../assets/img/dc-logo-bg.png');
-        background-repeat: no-repeat;
-        background-position: right;
+        @include dim($w:$containerDefaultWidth,$pad:2.5rem 0);
+        @include bgSet($url: '../assets/img/dc-logo-bg.png',$rep: no-repeat,$pos:right);
         .col {
             h2 {
-                text-transform: uppercase;
-                color:white;
+                @include text($tra:uppercase,$col:white);
             }
             ul {
-                @include dim($pb:1.5rem);
+                @include dim($pad:0 0 1.5rem 0);
                 a {
-                    color: grey;
-                    text-transform: capitalize;
+                    @include text($tra:capitalize,$col:grey);
                 }
             }
         }
@@ -131,29 +127,23 @@ export default {
 }
 #footer-bar {
     @include flex();
-    background-color: $footerBarBgColor;
-    @include dim($h:100px);
+    @include bgSet($col: $footerBarBgColor);
+    @include dim($h:$footerBarHeight);
     .container {
         @include flex($jus:space-between,$ali:center);
         button {
             @include dim($pad:1rem);
-            text-transform: uppercase;
-            font-size: 1rem;
+            @include text($tra:uppercase,$siz:1rem,$col:white);
+            @include bgSet($col: $footerBarBgColor);
             border: 2px solid $headerActiveLinkColor;
-            background-color: $footerBarBgColor;
-            color: white;
             &:hover {
                 cursor: pointer;
             }
         }
         ul {
-            @include flex($ali:center);
-            gap: 1.5rem;
+            @include flex($ali:center,$gap:1.5rem);
             a {
-                text-transform: uppercase;
-                font-size: 1.25rem;
-                font-weight: bold;
-                color: #0282f9;
+                @include text($tra:uppercase,$siz: 1.25rem,$wei:bold,$col:$footerBarTextColor);
             }
         }
     }

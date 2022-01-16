@@ -1,4 +1,22 @@
-$headerActiveLinkColor: #0282f9;
-$jumboBgColor: #212121;
-$footerBarBgColor: #181818;
+// common
 $containerDefaultWidth:70%;
+// HEADER
+$headerHeight: 100px;
+$headerBgColor: white;
+$headerLogoDim:70px;
+$headerActiveLinkColor: #0282f9;
+$headerActiveLinkBorderDim: 5%;
+// MAIN
+// Jumbo
+$jumboBgColor: #212121;
+$jumboHeight: 350px;
+// .cards-container
+$cardsBgColor: #25383f;
+$cardWidth: calc((100% / 6) - 1rem);
+// menu
+$mainMenuImgHeight: 70px;
+// FOOTER
+// #footer-bar
+$footerBarBgColor: #181818;
+$footerBarHeight: 100px;
+$footerBarTextColor: #0282f9;

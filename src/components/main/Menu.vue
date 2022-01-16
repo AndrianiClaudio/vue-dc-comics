@@ -21,12 +21,12 @@ export default {
 
 <style scoped lang='scss'>
 @import "../../assets/scss/partials/_mixins.scss";
+@import "../../assets/scss/partials/_variables.scss";
 a {
     @include flex($ali:center);
-    text-transform: uppercase;
-    color: white;
+    @include text($tra:uppercase,$col:white);
     img {
-        @include dim($h:60px);
+        @include dim($h:$mainMenuImgHeight);
     }
 }
 </style>

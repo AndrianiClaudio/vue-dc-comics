@@ -140,34 +140,24 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@import "../assets/scss/partials/_variables.scss";
 @import "../assets/scss/partials/_mixins.scss";
+@import "../assets/scss/partials/_variables.scss";
 #jumbo {
-    @include dim($h:350px);
-    background-image: url('../assets/img/jumbotron.jpg');
-    background-position: top;
-    background-size: cover;
+    @include dim($h:$jumboHeight);
+    @include bgSet($url: '../assets/img/jumbotron.jpg',$pos:top,$siz:color);
 }
 .cards {
-    @include dim($w:100%,$pt:4rem,$pb:4rem);
-    background-color: #25383f;
+    @include dim($w:100%,$pad:4rem 0);
+    @include bgSet($col: $cardsBgColor);
     .container {
-        @include flex($wra:wrap,$gap:1rem);
+        @include flex($wra:wrap,$gap:1rem,$jus:center);
     }
 }
 #menu {
-    background-color: $headerActiveLinkColor;
-    @include dim($pt:3rem,$pb:3rem);
+    @include bgSet($col: $headerActiveLinkColor);
+    @include dim($pad:3rem 0);
     .container {
         @include flex($jus:center,$ali:center,$gap:1.5rem);
-        // a {
-        //     @include flex($ali:center);
-        //     text-transform: uppercase;
-        //     color: white;
-        //     img {
-        //         @include dim($h:60px);
-        //     }
-        // }
     }
 }
 </style>
