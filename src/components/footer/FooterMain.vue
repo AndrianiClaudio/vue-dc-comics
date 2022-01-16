@@ -34,8 +34,13 @@ export default {
     }
     ul {
         @include dim($pad:0 0 1.5rem 0);
-        a {
-            @include text($tra:capitalize,$col:grey);
+        li{
+            &:hover {
+                @include text($dec:underline 1px solid grey);
+            }
+            a {
+                @include text($tra:capitalize,$col:grey);
+            }
         }
     }
 }

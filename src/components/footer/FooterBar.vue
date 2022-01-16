@@ -73,12 +73,20 @@ export default {
         border: 2px solid $headerActiveLinkColor;
         &:hover {
             cursor: pointer;
+            @include bgSet($col:$headerActiveLinkColor);
         }
     }
     ul {
         @include flex($ali:center,$gap:1.5rem);
         a {
             @include text($tra:uppercase,$siz: 1.25rem,$wei:bold,$col:$footerBarTextColor);
+        }
+        img {
+            &:hover {
+                @include bgSet($col:$headerActiveLinkColor);
+                border-radius: 50%;
+                cursor: pointer;
+            }
         }
     }
 }

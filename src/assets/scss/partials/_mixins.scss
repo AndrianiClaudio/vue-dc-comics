@@ -17,11 +17,13 @@
     @include dim();
     box-sizing: border-box;
 }
-@mixin text ($siz: 100%,$tra:null,$col:null,$wei:500) {
+@mixin text ($siz: 100%,$tra:null,$col:null,$wei:500,$ali:null,$dec:null) {
     color: $col;
     font-size: $siz;
     text-transform: $tra;
     font-weight: $wei;
+    text-align: $ali;
+    text-decoration: $dec;
 }
 @mixin bgSet ($url:null,$col:null,$pos:null,$siz:cover,$rep:no-repeat) {
     background-image: url($url);

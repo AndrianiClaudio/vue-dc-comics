@@ -22,11 +22,18 @@ export default {
 <style scoped lang='scss'>
 @import "../../assets/scss/partials/_mixins.scss";
 @import "../../assets/scss/partials/_variables.scss";
-a {
-    @include flex($ali:center);
-    @include text($tra:uppercase,$col:white);
-    img {
-        @include dim($h:$mainMenuImgHeight);
+li{
+    &:hover {
+        span {
+            @include text($dec:underline 1px solid white);
+        }
+    }
+    a {
+        @include flex($ali:center);
+        @include text($tra:uppercase,$col:white);
+        img {
+            @include dim($h:$mainMenuImgHeight);
+        }
     }
 }
 </style>

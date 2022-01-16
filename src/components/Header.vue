@@ -3,7 +3,7 @@
         <div class="container">
             <img :src='logo.src' :alt='logo.alt' class="logo">
             <ul>
-                <Menu 
+                <Item 
                 v-for="(item,index) in menu.items"
                 v-bind:key="item+index"
                 :item="item"
@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import Menu from './header/Menu.vue';
+import Item from './header/Item.vue';
 export default {
     name: 'Header',
     components: {
-        Menu,
+        Item,
     },
     data() {
         return {
